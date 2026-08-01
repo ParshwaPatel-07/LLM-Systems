@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Envs
+.venv/
+venv/
+.env
+
+# Data & artifacts (download / generate locally)
+*.bin
+*.pt
+*.onnx
+*.onnx.data
+*.pkl
+data/
+wandb/
+runs/
+*.zip
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Quarto / notebooks
+.ipynb_checkpoints/
