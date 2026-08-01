@@ -2,7 +2,7 @@
 
 Personal solutions and experiments for [Stanford CS336](https://cs336.stanford.edu/) — building language models end-to-end: tokenization, Transformer architecture, training, and systems optimizations.
 
-> **Status:** Assignment 1 core implementation complete · OpenWebText training in progress (~35%) · Assignment 2 in progress
+> **Status:** Assignment 1 core implementation complete · OpenWebText training in progress (~37%) · Assignment 2 in progress
 
 <!-- Optional: add LinkedIn post link after publishing
 **LinkedIn:** [post title](https://www.linkedin.com/...)
@@ -14,7 +14,7 @@ Personal solutions and experiments for [Stanford CS336](https://cs336.stanford.e
 
 | Folder | Focus | Status |
 |--------|--------|--------|
-| [`assignment1_basics/`](./assignment1_basics/) | BPE tokenizer, modern Transformer LM, AdamW training loop, decoding | Core done · OWT ~35% |
+| [`assignment1_basics/`](./assignment1_basics/) | BPE tokenizer, modern Transformer LM, AdamW training loop, decoding | Core done · OWT ~37% |
 | [`assignment2_systems/`](./assignment2_systems/) | Benchmarking, profiling, mixed precision, attention systems work | In progress |
 | [`common/`](./common/) | Notes on shared code between assignments | — |
 | [`docs/results.md`](./docs/results.md) | Loss curves, ablations, benchmark numbers | Fill as you run |
@@ -59,7 +59,7 @@ tokens [B, S]
 | Run | Dataset | Notes | Val loss / PPL | Status |
 |-----|---------|-------|----------------|--------|
 | A1 baseline | TinyStories | Transformer LM + BPE | _add number_ | Done |
-| A1 OWT | OpenWebText sample | Leaderboard-style run | loss 3.18 @ ~35% steps | In progress |
+| A1 OWT | OpenWebText | 4 resumed runs (checkpointed across sessions) | val_loss 3.349 @ 37.1% steps (37.1k/100k) | In progress |
 | A2 systems | — | Profiling / mixed precision / attention benches | _add_ | In progress |
 
 Full tables and figures: [`docs/results.md`](./docs/results.md)
@@ -108,7 +108,7 @@ Datasets: follow the download steps in each assignment `README.md` / handout PDF
 | When | Update |
 |------|--------|
 | — | A1: BPE + Transformer LM + training/decoding (core complete) |
-| — | A1: OpenWebText training in progress (~35%, loss 3.18) |
+| — | A1: OpenWebText training in progress (37.1k/100k, val_loss 3.349) |
 | — | A2: started — benchmarking, profiling, mixed precision |
 | _next_ | Finish OWT run · continue A2 systems |
 
