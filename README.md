@@ -2,7 +2,7 @@
 
 Personal solutions and experiments for [Stanford CS336](https://cs336.stanford.edu/) — building language models end-to-end: tokenization, Transformer architecture, training, and systems optimizations.
 
-> **Status:** Assignment 1 complete · Assignment 2 in progress · more units coming
+> **Status:** Assignment 1 core implementation complete · OpenWebText training in progress (~35%) · Assignment 2 in progress
 
 <!-- Optional: add LinkedIn post link after publishing
 **LinkedIn:** [post title](https://www.linkedin.com/...)
@@ -14,7 +14,7 @@ Personal solutions and experiments for [Stanford CS336](https://cs336.stanford.e
 
 | Folder | Focus | Status |
 |--------|--------|--------|
-| [`assignment1_basics/`](./assignment1_basics/) | BPE tokenizer, modern Transformer LM, AdamW training loop, decoding | Done |
+| [`assignment1_basics/`](./assignment1_basics/) | BPE tokenizer, modern Transformer LM, AdamW training loop, decoding | Core done · OWT ~35% |
 | [`assignment2_systems/`](./assignment2_systems/) | Benchmarking, profiling, mixed precision, attention systems work | In progress |
 | [`common/`](./common/) | Notes on shared code between assignments | — |
 | [`docs/results.md`](./docs/results.md) | Loss curves, ablations, benchmark numbers | Fill as you run |
@@ -38,7 +38,7 @@ Decoder-only Transformer LM, aligned with current open-model defaults:
 | LR schedule | Linear warmup → cosine decay |
 | Tokenizer | Byte-level BPE (GPT-2-style pretokenization) |
 
-**Key references:** Vaswani et al. 2017 (Transformer) · Sennrich et al. 2016 (BPE) · Su et al. 2021 (RoPE) · Shazeer 2020 (SwiGLU) · Zhang & Sennrich 2019 (RMSNorm) · Loshchilov & Hutter 2017 (AdamW)
+**Key references:** Vaswani et al. 2017 (Transformer) · Sennrich et al. 2016 (BPE) · Xiong et al. 2020 (Pre-LN Transformer placement) · Su et al. 2021 (RoPE) · Shazeer 2020 (SwiGLU) · Zhang & Sennrich 2019 (RMSNorm) · Loshchilov & Hutter 2017 (AdamW)
 
 ```
 tokens [B, S]
@@ -59,7 +59,7 @@ tokens [B, S]
 | Run | Dataset | Notes | Val loss / PPL | Status |
 |-----|---------|-------|----------------|--------|
 | A1 baseline | TinyStories | Transformer LM + BPE | _add number_ | Done |
-| A1 OWT | OpenWebText sample | Leaderboard-style run | _add number_ | Done / TBD |
+| A1 OWT | OpenWebText sample | Leaderboard-style run | loss 3.18 @ ~35% steps | In progress |
 | A2 systems | — | Profiling / mixed precision / attention benches | _add_ | In progress |
 
 Full tables and figures: [`docs/results.md`](./docs/results.md)
@@ -107,9 +107,10 @@ Datasets: follow the download steps in each assignment `README.md` / handout PDF
 
 | When | Update |
 |------|--------|
-| — | A1: BPE + Transformer LM + training/decoding |
+| — | A1: BPE + Transformer LM + training/decoding (core complete) |
+| — | A1: OpenWebText training in progress (~35%, loss 3.18) |
 | — | A2: started — benchmarking, profiling, mixed precision |
-| _next_ | A2: continue systems (kernels / parallelism as completed) |
+| _next_ | Finish OWT run · continue A2 systems |
 
 ---
 

@@ -11,7 +11,7 @@ Add figures under `docs/assets/` and link them here. Numbers below are placehold
 | Run | Model | Data | Steps | Peak LR | Val loss | Val PPL | Notes |
 |-----|-------|------|-------|---------|----------|---------|-------|
 | ts-baseline | D=384, L=6, H=6 | TinyStories | — | 3e-4 | — | — | |
-| owt | — | OpenWebText sample | — | — | — | — | |
+| owt | — | OpenWebText sample | ~35% | — | 3.18 | — | In progress |
 
 ### Ablations (optional)
 
