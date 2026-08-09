@@ -41,13 +41,26 @@ Currently at **37,100 / 100,000** planned steps (**~37%**). Latest checkpoint: t
 
 ## Assignment 2 — Systems
 
+### FlashAttention2 forward (causal, T4 GPU)
+
+Benchmarked with `cs336_systems/flash_benchmarking.py` (PyTorch tiled FA2 vs Triton kernel).
+
+| seq_len | dtype | d | PyTorch Fwd | Triton Fwd | Speedup |
+|---------|-------|---|-------------|------------|---------|
+| 128 | fp16 | 128 | 27.71 ms | 0.20 ms | ~139× |
+| 512 | fp16 | 128 | 327.67 ms | 0.72 ms | ~455× |
+| 1024 | fp16 | 128 | 1226.90 ms | 2.52 ms | ~487× |
+
+Headline: at `seq_len=1024`, fp16, `d=128` — **~487×** Triton vs PyTorch forward.
+
+### Other experiments
+
 | Experiment | Metric | Result | Notes |
 |------------|--------|--------|-------|
-| Forward/backward benchmark | ms/step | — | `cs336_systems/benchmarking.py` |
 | Mixed precision | throughput / memory | — | |
-| Attention benchmark | ms vs seq len | — | |
+| Model step benchmark | ms/step | — | `benchmarking.py` |
 | Profiling | top kernels | — | |
 
 ### Plots
 
-<!-- ![Attention latency vs sequence length](assets/attention_bench.png) -->
+<!-- ![FlashAttention latency vs sequence length](assets/flash_attn_bench.png) -->
