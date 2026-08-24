@@ -1,6 +1,6 @@
 # LLM Systems: Building Language Models from Scratch
 
-An independent project building language models end-to-end — tokenization, Transformer architecture, training, and the systems engineering underneath them (custom kernels, distributed training). Core ideas draw on [Stanford's CS336](https://cs336.stanford.edu/) as a reference framework, extended and benchmarked as ongoing work.
+An independent project building language models end-to-end tokenization, Transformer architecture, training, and the systems engineering underneath them (custom kernels, distributed training). Core ideas draw on [Stanford's CS336](https://cs336.stanford.edu/) as a reference framework, extended and benchmarked as ongoing work.
 
 > **Status:** Transformer + training pipeline complete · OpenWebText training in progress (~37%) · FlashAttention2 (PyTorch + Triton) implemented & benchmarked · DDP + FSDP implemented (benchmarking next)
 
